@@ -1,6 +1,5 @@
 const removeFromArray = function (array) {
     const args = Array.prototype.slice.call(arguments, 1);
-    let resultArray = array;
 
     for (let i = 0; i < array.length; i++) {
         if (array[i] === args[0]) {
@@ -8,7 +7,6 @@ const removeFromArray = function (array) {
         }
     }
 
-    console.log(resultArray);
     return resultArray;
 };
 
