@@ -1,9 +1,13 @@
 const removeFromArray = function (array) {
-    const args = Array.prototype.slice.call(arguments, 1);
+    const toBeDeletedList = Array.prototype.slice.call(arguments, 1);
+    let resultArray = array;
 
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] === args[0]) {
-            resultArray = array.slice(0, i).concat(array.slice(i + 1))
+    for (let i = 0; i < toBeDeletedList.length; i++) {
+        for (let j = 0; j < resultArray.length; j++) {
+            if (resultArray[j] === toBeDeletedList[i]) {
+                resultArray = resultArray.slice(0, j).concat(resultArray.slice(j + 1));
+                break;
+            }
         }
     }
 
